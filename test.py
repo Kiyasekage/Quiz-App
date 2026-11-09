@@ -1,3 +1,12 @@
+def check_ans(ques_num,answer,attemps,player):
+    correct_ans = quiz[ques_num]["answer"]
+    if correct_ans.lower() == answer.lower():
+        print(f"Correct answer! One point added")
+        return True
+    else:
+        print(f"Wrong answer! You have {attemps-1} Attemps left! Please try again!")
+        return False
+            
 print("There are a total of 6 questions, you can skip a question anytime by typing skip")
 player = input("Enter 2 player with a space : ")
 player_list = player.split(" ")
