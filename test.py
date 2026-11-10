@@ -10,6 +10,13 @@ def switch(user_index):
     if user_index == 0:
         return 1
     return 0
+def find_winner(p1,p2):
+    if player_score[p1]>player_score[p2]:
+        print(f"Congrats to {p1}!The score is {player_score[p1]}")
+    elif player_score[p2]>player_score[p1]:
+        print(f"Congrats to {p2}!The score is {player_score[p2]}")
+    else:
+        print("Its a draw!")
 print("There are a total of 6 questions, you can skip a question anytime by typing skip")
 player = input("Enter 2 player with a space : ")
 player_list = player.split(" ")
@@ -31,3 +38,5 @@ for question in quiz:
     current_player_index = player_list.index(current_player)
     next_player_index = switch(current_player_index)
     current_player = player_list[next_player_index]
+    
+find_winner(player_list[0],player_list[1])
