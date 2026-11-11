@@ -30,13 +30,12 @@ for question in quiz:
         ans = input("Enter answer (If you want to skip, please type skip)")
         if ans=="skip":
             break
-        check_ans(question,ans,attemps,current_player)
-        if check:
+        if check_ans(question,ans,attemps,current_player):
             player_score[current_player]+=1
             break
         attemps-=1
     current_player_index = player_list.index(current_player)
     next_player_index = switch(current_player_index)
     current_player = player_list[next_player_index]
-    
+
 find_winner(player_list[0],player_list[1])
